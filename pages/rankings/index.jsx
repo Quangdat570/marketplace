@@ -77,7 +77,7 @@ const index = ( {products}) => {
                 </div>
                 </Col>
                 {products.map((creator) => (
-                <Col xs={12} lg={12} className={styles.rank_1}>
+                <Col xs={12} lg={12} className={styles.rank_1} key={creator.id}>
                   <Link href='' className='text-decoration-none text-white'>
                     <div className={styles.table_item}>
                       <div className={styles.table_artist}>
