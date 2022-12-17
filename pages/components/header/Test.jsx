@@ -128,14 +128,14 @@ const Headerrrr = () => {
     <>
 
 
-    <div>
-      {['left'].map((anchor) => (
+    
+      {/* {['left'].map((anchor) => (
         <React.Fragment key={anchor}>
-          {/* <Button onClick={toggleDrawer(anchor, true)}>{anchor}</Button> */}
+         
           <AppBar position="static" sx={{background:"#2b2b2b"}}>
         <Container maxWidth="xl">
         <Toolbar disableGutters>
-          {/* <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} /> */}
+          
           <Button onClick={toggleDrawer(anchor, true)} sx={{zIndex:"10", color:"white" }} className='d-lg-none'><MenuIcon/></Button>
           <Typography
             variant="h6"
@@ -176,7 +176,7 @@ const Headerrrr = () => {
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
-                <Link href={page} sx={{textDecoration:'none', color:"white", ":hover":{color:'#fff' }}}>{page}</Link>
+                <Link  sx={{textDecoration:'none', color:"white", ":hover":{color:'#fff' }}}>{page}</Link>
               </Button>
             ))}
           </Box>
@@ -229,8 +229,10 @@ const Headerrrr = () => {
             {list(anchor)}
           </Drawer>
         </React.Fragment>
-      ))}
-    </div>
+      ))} */}
+
+      
+    
 
    
 
