@@ -1,0 +1,350 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+@media screen and (max-width:375px) {
+    .list {
+        justify-content: center;
+    }
+    .text {
+        text-align: center;
+    }
+    .artist_info {
+        font-size: 16px;
+        font-weight: 400;
+        width: 80px;
+        
+    }
+    .img {
+        width: 24px;
+        height: 24px;
+        border-radius: 40px;
+    }
+    .change {
+        display: none;
+    }
+    .changeIf {
+        display: none;
+    }
+    .change_header {
+        display: none;
+    }
+
+
+    .nft_sold {
+        display: none;
+    }
+    .volume {
+        width: 80px;
+    }
+
+    
+}
+@media screen and (min-width:376px) and (max-width:575px) {
+    .list {
+        justify-content: center;
+    }
+    .text {
+        text-align: center;
+    }
+    .artist_info {
+        font-size: 16px;
+        font-weight: 400;
+    }
+    .img {
+        width: 24px;
+        height: 24px;
+        border-radius: 40px;
+    }
+    .change {
+        display: none;
+    }
+    .changeIf {
+        display: none;
+    }
+    .change_header {
+        display: none;
+    }
+    .nft_sold {
+        display: none;
+    }
+    .volume {
+        width: 160px;
+    }
+}
+  
+@media screen and (min-width:576px) and (max-width:767px) {
+    .list {
+        justify-content: center;
+    }
+    .text {
+        text-align: center;
+    }
+    .artist_info {
+        font-size: 16px;
+        font-weight: 400;
+    }
+    .img {
+        width: 30px;
+        height: 30px;
+        border-radius: 40px;
+    }
+    .change {
+        display: none;
+    }
+    .changeIf {
+        display: none;
+    }
+    .change_header {
+        display: none;
+    }
+    .nft_sold {
+        display: none;
+    }
+    .volume {
+        width: 160px;
+    }
+}
+  
+@media screen and (min-width:768px) and (max-width:991px) {
+    .list {
+        justify-content: flex-end;
+    }
+    .artist_info {
+        font-size: 22px;
+        font-weight: 600;
+    }
+    .img {
+        width: 62px;
+        height: 60px;
+        border-radius: 40px;
+    }
+    .change {
+        display: block;
+    }
+    .changeIf {
+        display: block;
+    }
+    .change_header {
+        display: block;
+    }
+    .nft_sold {
+        display: block;
+    }
+    .volume {
+        width: 160px;
+    }
+   
+}
+@media screen and (min-width:992px) and (max-width:1199px) {
+    .list {
+        justify-content: flex-end;
+    }
+    .artist_info {
+        font-size: 18px;
+        font-weight: 600;
+    }
+    .img {
+        width: 62px;
+        height: 60px;
+        border-radius: 40px;
+    }
+    .change {
+        display: block;
+    }
+    .changeIf {
+        display: block;
+    }
+    .change_header {
+        display: block;
+    }
+    .nft_sold {
+        display: block;
+    }
+    .volume {
+        width: 160px;
+    }
+}
+  
+@media screen and (min-width:1200px) {
+    .list {
+        justify-content: flex-end;
+    }
+    .artist_info {
+        font-size: 22px;
+        font-weight: 600;
+    }
+    .img {
+        width: 62px;
+        height: 60px;
+        border-radius: 40px;
+    }
+    .change {
+        display: block;
+    }
+    .changeIf {
+        display: block;
+    }
+    .change_header {
+        display: block;
+    }
+    .nft_sold {
+        display: block;
+    }
+    .volume {
+        width: 160px;
+    }
+  
+}
+
+.background {
+    background-color: #2b2b2b;
+    font-family: 'DM Sans', sans-serif;
+    padding: 50px 0;
+    color: #fff;
+
+}
+.text {
+    font-size: 22px;
+    text-transform: capitalize;
+    font-weight: 700;
+}
+.list {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+
+}
+.item {
+    color: #acacac;
+    font-size: 14px;
+    
+}
+.current {
+    font-size: 14px;
+}
+.table_title {
+    display: flex;
+    gap: 20px;
+}
+.icon_head {
+    font-size: 30px;
+}
+.title_top {
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.layout {
+    display: flex;
+    justify-content: space-between;
+}
+.table_item {
+    display: flex;
+    gap: 60px;
+    justify-content: space-between;
+    padding: 12px 20px;
+    background: #3B3B3B; 
+    border-radius: 20px; 
+
+}
+.table_item_header {
+    display: flex;
+    gap: 60px;
+    justify-content: space-between;
+    padding: 12px 20px;
+}
+.volume {
+    text-align: center;
+}
+.artist_card {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s linear;
+    user-select: none;
+    overflow: hidden;
+    border-radius: 6px;
+    transform: center left;
+    position: relative;
+    transform: scale(0.9);
+}
+.artist_card:hover {
+    opacity: 1;
+    transform: scale(0.8);
+    z-index: 10;
+}
+.table_artist {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    
+}
+.stats {
+    display: flex;
+    align-items: center;
+}
+.change {
+    width: 160px;
+    color: #00ac4f;
+}
+.nft_sold {
+    width: 160px;
+}
+
+.rank_number {
+    min-width: 30px;
+    text-align: center;
+    border-radius: 100%;
+    background-color: #3b3b3b;
+}
+.artist_info {
+    white-space: nowrap; 
+    text-overflow: ellipsis;
+    overflow: hidden;
+    -webkit-line-clamp: 1;
+   
+    line-height: 140%;
+    /* identical to box height, or 31px */
+
+    text-transform: capitalize;
+
+    color: #FFFFFF;
+}
+.artist_header {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+    /* or 22px */
+
+
+    /* Caption & Label Text */
+
+    color: #858584;
+    width: 100px;
+    padding-left: 30px;
+}
+.border {
+    border: 1px solid #3B3B3B;
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+.rank_1 {
+    margin-bottom: 20px;
+    /* background: #3B3B3B; */
+    /* border-radius: 20px; */
+}
+.breadcump {
+    background-color: #2b2b2b;
+    font-family: 'DM Sans', sans-serif;
+    color: #fff;
+    padding: 30px 0 20px;
+    border-bottom: 1px solid #ffffff14;
+    
+}
+.changeIf {
+    color: #ff0003;
+    width: 160px;
+}
+.change_header {
+    width: 160px;
+}

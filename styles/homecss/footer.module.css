@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+.background {
+    background-color: #3b3b3b;
+    font-family: 'Work Sans', sans-serif;
+    padding: 50px 30px 50px 30px;
+
+}
+.logo {
+    color: #fff;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 32px;
+    font-weight: 600;
+   
+    line-height: 140%;
+    /* identical to box height, or 31px */
+
+    text-transform: capitalize;
+}
+
+.audition_footer {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+    /* or 22px */
+
+
+    color: #CCCCCC;
+}
+.join_community {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+    /* or 22px */
+
+
+    color: #CCCCCC;
+}
+.icons_media {
+    font-size: 32px;
+    color: #CCCCCC;
+}
+.icons_media:hover {
+    color: #CCCCCC;
+
+}
+.icons {
+    gap: 10px;
+    display: flex;
+}
+.community_info {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.layout_column_1 {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding-right: 80px;
+}
+
+.explore {
+    font-family: 'Space Mono', monospace;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 160%;
+    /* or 35px */
+
+    text-transform: capitalize;
+
+    color: #FFFFFF;
+}
+.href {
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+    /* or 22px */
+
+
+    color: #CCCCCC;
+
+}
+.href:hover {
+    color: #CCCCCC;
+
+}
+.pages {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.layout_column_2 {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+.text_audition_footer {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+    /* or 22px */
+
+
+    color: #CCCCCC;
+}
+.subscribe_form {
+    align-items: center;
+    background-color: #FFFFFF;
+    border: 2px none;
+    border-radius: 20px;
+    display: flex;
+    gap: 12px;
+    height: 60px;
+    mix-blend-mode: normal;
+    padding: 16px 0px 16px 20px;
+    position: relative;
+    width: 360px;
+
+}
+.input {
+    border: 0;
+    position: relative;
+    min-width: 209px;
+    /* flex: 1;
+    height: 22px;
+    letter-spacing: 0.00px;
+    line-height: 22.4px;
+    
+    mix-blend-mode: normal;
+    padding: 0;
+   
+    /* resize: none;
+    text-align: left;
+    white-space: nowrap;  */
+}
+.btn_footer {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 140%;
+    /* or 22px */
+
+    text-align: center;
+
+    color: #FFFFFF;
+}
+.link_btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0px 30px;
+    gap: 12px;
+
+    width: 179px;
+    height: 60px;
+
+    /* Call to Action */
+
+    background: #A259FF;
+    border-radius: 20px;
+    text-decoration: none;
+}

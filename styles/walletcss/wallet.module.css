@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+
+
+@media screen and (max-width:375px) {
+    .layout {
+        align-items: center;
+    }
+    .headline {
+        font-size: 38px;
+
+    }
+    .sub_head {
+        font-size: 16px;
+    }
+}
+@media screen and (min-width:376px) and (max-width:575px) {
+    .layout {
+        align-items: center;
+    }
+    .headline {
+        font-size: 38px;
+    }
+    .sub_head {
+        font-size: 16px;
+    }
+}
+  
+@media screen and (min-width:576px) and (max-width:767px) {
+    .layout {
+        align-items: flex-start;
+    }
+    .headline {
+        font-size: 38px;
+        justify-content: center;
+    }
+    .sub_head {
+        font-size: 16px;
+        text-align: center;
+    }
+    .layout {
+        align-items: center;
+    }
+
+}
+  
+@media screen and (min-width:768px) and (max-width:991px) {
+    .layout {
+        align-items: flex-start;
+    }
+    .headline {
+        font-size: 38px;
+    }
+    .sub_head {
+        font-size: 22px;
+    }
+    .img {
+        height: 513px;
+        object-fit: cover;
+    }
+}
+@media screen and (min-width:992px) and (max-width:1199px) {
+    .layout {
+        align-items: flex-start;
+    }
+    .headline {
+        font-size: 51px;
+    }
+    .sub_head {
+        font-size: 22px;
+    }
+}
+  
+@media screen and (min-width:1200px) {
+    .layout {
+        align-items: flex-start;
+    }
+    .headline {
+        font-size: 51px;
+    }
+    .sub_head {
+        font-size: 22px;
+    }
+  
+}
+
+.layout {
+    display: flex;
+    flex-direction: column;
+}
+
+.background {
+    background-color: #2b2b2b;
+    font-family: 'Work Sans', sans-serif;
+    color: #fff;
+
+
+}
+.img {
+    width: 100%;
+    max-width: 912px;
+    max-height: 642px;
+    
+}
+.heading {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.headline {
+    font-weight: 600;
+    /* font-size: 51px; */
+    line-height: 110%;
+    /* or 56px */
+
+    display: flex;
+    align-items: center;
+    text-transform: capitalize;
+    
+}
+.connect_wallet {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-top: 30px;
+}
+.sub_head {
+    font-weight: 400;
+    /* font-size: 22px; */
+    line-height: 160%;
+    /* or 35px */
+
+
+    
+
+    
+}
+.wallet {
+    display: flex;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s linear;
+    gap: 20px;
+    padding: 0 20px;
+    border: 1px solid #a259ff;
+    border-radius: 20px;
+    padding: 20px;
+    align-items: center;
+    margin: 10px;
+    overflow: hidden;
+    transform: scale(1);
+
+}
+.wallet:hover {
+    transform: scale(1.1);
+}
+
+.name_wallet {
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 140%;
+    /* identical to box height, or 31px */
+    width: 198px;
+    text-transform: capitalize;
+
+
+}
