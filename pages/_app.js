@@ -12,10 +12,12 @@ import '../styles/rankingscss/rankings.module.css'
 import '../styles/marketcss/products-detail.module.css'
 
 
+
+
 function MyApp({ Component, pageProps }) {
   return (
     <Layout>
-
+      
       <Component {...pageProps} />
       
     </Layout>
