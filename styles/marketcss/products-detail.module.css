@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+@media screen and (max-width:375px) {
+    
+    .text {
+        text-align: center;
+    }
+    .list {
+        justify-content: center;
+    }
+    
+
+    
+}
+@media screen and (min-width:376px) and (max-width:575px) {
+    
+    .text {
+        text-align: center;
+    }
+    .list {
+        justify-content: center;
+    }
+   
+}
+  
+@media screen and (min-width:576px) and (max-width:767px) {
+    
+    .text {
+        text-align: center;
+   
+    }
+    .list {
+        justify-content: center;
+    }
+}
+  
+@media screen and (min-width:768px) and (max-width:991px) {
+    .list {
+        justify-content: flex-end;
+    }
+   
+}
+@media screen and (min-width:992px) and (max-width:1199px) {
+    .list {
+        justify-content: flex-end;
+    }
+}
+  
+@media screen and (min-width:1200px) {
+    .list {
+        justify-content: flex-end;
+    }
+  
+}
+
+.background {
+    background-color: #2b2b2b;
+    font-family: 'DM Sans', sans-serif;
+    padding: 50px 0;
+    color: #fff;
+
+}
+.text {
+    font-size: 22px;
+    text-transform: capitalize;
+    font-weight: 700;
+}
+.breadcump {
+    background-color: #2b2b2b;
+    font-family: 'DM Sans', sans-serif;
+    color: #fff;
+    padding: 30px 0 20px;
+    border-bottom: 1px solid #ffffff14;
+    
+}
+.list {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+
+}
+.title {
+    font-size: 30px;
+    margin-bottom: 0;
+    line-height: 1.25;
+    font-weight: 700;
+}
+.title_aria {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.react_aria {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 7px 12px;
+    background-color: #00a3ff;
+    cursor: pointer;
+    border-radius: 6px;
+
+}
+.icon_heart {
+    font-size: 24px;
+}
+.number_react {
+    font-size: 18px;
+    padding-top: 3px;
+}
+.name_bid {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    color: #acacac;
+
+}
+.price {
+    font-family: 'Roboto', sans-serif;
+    color: #00a3ff;
+    font-weight: 500;
+    font-size: 14px;
+}
+.title_name {
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    margin-top: 15px;
+    margin-bottom: 30px;
+}
+.head_category {
+    font-family: 'Roboto', sans-serif;
+
+    font-size: 16px;
+}
+.sale_category {
+    font-weight: 500;
+    font-size: 16px;
+    color: #acacac;
+}
+.img_products {
+    border-radius: 40px;
+    height: 40px;
+    width: 40px;
+}
+.top_seller_content {
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 0;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.25;
+    margin-left: 12px;
+}
+.top_seller_swapper {
+    display: flex;
+    align-items: center;
+}
+.thumbnail {
+    padding: 1px;
+    border-radius: 100%;
+    border: 3px solid #ffffff14;
+}
+.category_collection {
+    display: flex;
+}
+.category {
+    margin-right: 50px;
+}
+.top_creator {
+    display: flex;
+    gap: 20px;
+}
+.price_bids {
+    font-family: 'Roboto', sans-serif;
+    color: #acacac;
+    font-weight: 500;
+    font-size: 14px;
+}
+.name_bid_creator {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    color: #fff;
+    margin-left: 15px;
+}
+.swapper_bids {
+    border-bottom: 1px solid #ffffff14;
+    padding-bottom: 24px;
+    padding-top: 24px;
+}

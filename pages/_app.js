@@ -9,6 +9,7 @@ import '../styles/marketcss/sale.module.css'
 
 import '../styles/marketcss/Sell.module.css'
 import '../styles/rankingscss/rankings.module.css'
+import '../styles/marketcss/products-detail.module.css'
 
 
 function MyApp({ Component, pageProps }) {

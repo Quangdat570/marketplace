@@ -1,14 +1,18 @@
-import React,{useState} from 'react'
-// import { Container, Row, Col,Navbar,Offcanvas,Nav} from 'react-bootstrap'
-
-import styles from './Header.module.css'
-import {BiUser} from 'react-icons/bi'
-import {  BsPerson,BsHandbag  } from "react-icons/bs";
-import { Scale, ShoppingCartCheckoutIcon } from '@mui/icons-material'
-
+import * as React from 'react';
+import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
-import Drawer from '@mui/material/Drawer';
+import Toolbar from '@mui/material/Toolbar';
+import IconButton from '@mui/material/IconButton';
+import Typography from '@mui/material/Typography';
+import Menu from '@mui/material/Menu';
+import MenuIcon from '@mui/icons-material/Menu';
+import Container from '@mui/material/Container';
+import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
+import Tooltip from '@mui/material/Tooltip';
+import MenuItem from '@mui/material/MenuItem';
+import AdbIcon from '@mui/icons-material/Adb';
+import SwipeableDrawer from '@mui/material/SwipeableDrawer';
 import List from '@mui/material/List';
 import Divider from '@mui/material/Divider';
 import ListItem from '@mui/material/ListItem';
@@ -17,43 +21,13 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
-import AppBar from '@mui/material/AppBar';
-import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import Avatar from '@mui/material/Avatar';
-import Tooltip from '@mui/material/Tooltip';
-import MenuItem from '@mui/material/MenuItem';
-import AdbIcon from '@mui/icons-material/Adb';
-import Menu from '@mui/material/Menu';
-import MenuIcon from '@mui/icons-material/Menu';
-import Container from '@mui/material/Container';
-import Typography from '@mui/material/Typography';
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import Badge from '@mui/material/Badge';
-import { styled } from '@mui/material/styles';
-import NotificationsIcon from '@mui/icons-material/Notifications';
-import Link from '@mui/material/Link';
+import StoreIcon from '@mui/icons-material/Store';
+import Link from 'next/link';
 
+const pages = ['marketplace', 'wankings', 'wallet'];
+const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
-
-
-
-const pages = ['marketplace', 'rangkings', 'connectwallet'];
-const settings = ['profile', 'account', 'dashboard', 'logout'];
-const StyledBadge = styled(Badge)(({ theme }) => ({
-  '& .MuiBadge-badge': {
-    right: -3,
-    top: 13,
-    border: `2px solid ${theme.palette.background.paper}`,
-    padding: '0 4px',
-  },
-  '& .Typography': {
-    transformOrigin: 'Scale(0.9)'
-  }
-
-}));
-
-const Headerrrr = () => {
+function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -72,6 +46,8 @@ const Headerrrr = () => {
     setAnchorElUser(null);
   };
 
+  // 
+
   const [state, setState] = React.useState({
     top: false,
     left: false,
@@ -80,7 +56,11 @@ const Headerrrr = () => {
   });
 
   const toggleDrawer = (anchor, open) => (event) => {
-    if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
+    if (
+      event &&
+      event.type === 'keydown' &&
+      (event.key === 'Tab' || event.key === 'Shift')
+    ) {
       return;
     }
 
@@ -122,21 +102,11 @@ const Headerrrr = () => {
     </Box>
   );
 
- 
-  
   return (
-    <>
-
-
-    
-      {/* {['left'].map((anchor) => (
-        <React.Fragment key={anchor}>
-         
-          <AppBar position="static" sx={{background:"#2b2b2b"}}>
-        <Container maxWidth="xl">
+    <AppBar position="static" sx={{background:'#2b2b2b', borderBottom:'1px solid #ffffff14'}}>
+      <Container maxWidth="xl">
         <Toolbar disableGutters>
-          
-          <Button onClick={toggleDrawer(anchor, true)} sx={{zIndex:"10", color:"white" }} className='d-lg-none'><MenuIcon/></Button>
+          <StoreIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
           <Typography
             variant="h6"
             noWrap
@@ -147,49 +117,96 @@ const Headerrrr = () => {
               display: { xs: 'none', md: 'flex' },
               fontFamily: 'monospace',
               fontWeight: 700,
-              letterSpacing: '.3rem',
+              // letterSpacing: '.3rem',
+              color: 'inherit',
+              textDecoration: 'none',
+              
+            }}
+          >
+            NFTs Marketplace
+          </Typography>
+
+          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+          <div>
+      {['left'].map((anchor) => (
+        <React.Fragment key={anchor}>
+          {/* <Button onClick={toggleDrawer(anchor, true)}>{anchor}</Button> */}
+          <IconButton
+              size="large"
+              aria-label="account of current user"
+              aria-controls="menu-appbar"
+              aria-haspopup="true"
+              onClick={toggleDrawer(anchor, true)}
+              color="inherit"
+            >
+              <MenuIcon />
+            </IconButton>
+          <SwipeableDrawer
+            anchor={anchor}
+            open={state[anchor]}
+            onClose={toggleDrawer(anchor, false)}
+            onOpen={toggleDrawer(anchor, true)}
+          >
+            {list(anchor)}
+          </SwipeableDrawer>
+        </React.Fragment>
+      ))}
+    </div>
+            {/* <IconButton
+              size="large"
+              aria-label="account of current user"
+              aria-controls="menu-appbar"
+              aria-haspopup="true"
+              onClick={handleOpenNavMenu}
+              color="inherit"
+            >
+              <MenuIcon />
+            </IconButton> */}
+            
+          </Box>
+          <StoreIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
+          <Typography
+            variant="h5"
+            noWrap
+            component="a"
+            href="/"
+            sx={{
+              mr: 2,
+              display: { xs: 'flex', md: 'none' },
+              flexGrow: 1,
+              fontFamily: 'Work Sans',
+              fontWeight: 600,
+             
               color: 'inherit',
               textDecoration: 'none',
             }}
           >
-            <Link href='/'>
-           <img src="/homepages/logo nft.jpg" alt="" />
-            
-            </Link>
+            NFTs
           </Typography>
-
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
-           
-          </Box>
-         
-          <Box sx={{width:"40px", display:{sx:"flex", md:'none', mr:1 }}}>
-          <Link href='/'>
-          
-          <img src="homepages/logo nft.jpg" alt="" className='w-100' />
-          </Link>
-
-          </Box>
-          <Box sx={{ flexGrow: 10, display: { xs: 'none', md: 'flex' }, transition:"all 0.3s linner", transform:"scale(1)"  }}>
-            {pages.map((page) => (
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+            {/* {pages.map((page) => (
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
-                <Link  sx={{textDecoration:'none', color:"white", ":hover":{color:'#fff' }}}>{page}</Link>
+                {page}
               </Button>
-            ))}
-          </Box>
-          <Box sx={{flexGrow:1,display:"flex", alignItems:"center", justifyContent: { xs:"end", md:"space-evenly"}, cursor:"pointer", gap:{xs:"20px" , md:'0px'}}}>
-          <StyledBadge badgeContent={4} color="secondary">
-            <ShoppingCartIcon />
-          </StyledBadge>
-          <NotificationsIcon sx={{fontSize:{ xs:"25px" , sm:"30px"}}}/>
+            ))} */}
+            <Button onClick={handleCloseNavMenu}  sx={{ my: 2, color: 'white', display: 'block', fontFamily:'Work Sans', fontWeight:'600', fontSize:'16px', textTransform:'capitalize' }}>
+                <Link href='/products' className='text-white text-decoration-none'>Marketplace</Link>
+            </Button>
+
+            <Button onClick={handleCloseNavMenu}  sx={{ my: 2, color: 'white', display: 'block', fontFamily:'Work Sans', fontWeight:'600', fontSize:'16px', textTransform:'capitalize' }}>
+                <Link href='/rankings' className='text-white text-decoration-none'>Rankings</Link>
+            </Button>
+
+            <Button onClick={handleCloseNavMenu}  sx={{ my: 2, color: 'white', display: 'block', fontFamily:'Work Sans', fontWeight:'600', fontSize:'16px', textTransform:'capitalize' }}>
+                <Link href='/connectwallet' className='text-white text-decoration-none'>Connect Wallet</Link>
+            </Button>
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
-          
-            
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                 <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
@@ -220,26 +237,7 @@ const Headerrrr = () => {
           </Box>
         </Toolbar>
       </Container>
-          </AppBar>
-          <Drawer
-            anchor={anchor}
-            open={state[anchor]}
-            onClose={toggleDrawer(anchor, false)}
-          >
-            {list(anchor)}
-          </Drawer>
-        </React.Fragment>
-      ))} */}
-
-      
-    
-
-   
-
-      
-    </>
-  )
-  
+    </AppBar>
+  );
 }
-
-export default Headerrrr
+export default ResponsiveAppBar;
