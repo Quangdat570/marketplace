@@ -10,17 +10,21 @@ import '../styles/marketcss/sale.module.css'
 import '../styles/marketcss/Sell.module.css'
 import '../styles/rankingscss/rankings.module.css'
 import '../styles/marketcss/products-detail.module.css'
+import { Provider } from 'react-redux'
+import store from '../store'
 
 
 
 
 function MyApp({ Component, pageProps }) {
   return (
+    <Provider store={store}>
+
     <Layout>
-      
       <Component {...pageProps} />
-      
     </Layout>
+
+    </Provider>
   )
 }
 

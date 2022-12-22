@@ -2,13 +2,23 @@ import React from 'react'
 import { Container, Row, Col, Card, CardGroup, Carousel } from 'react-bootstrap'
 import Link from 'next/link'
 import styles from '../../styles/marketcss/market.module.css'
-import ListProducts from '../components/marketpage/ListProducts'
-import TopSale from '../components/marketpage/TopSale'
-import SliderColection from '../components/marketpage/Slider'
-import Sell from '../components/marketpage/Sell'
+import ListProducts from './marketpage/ListProducts'
+import TopSale from './marketpage/TopSale'
+import SliderColection from './marketpage/Slider'
+import Sell from './marketpage/Sell'
+
+import { useDispatch, useSelector } from "react-redux";
+import { selectProductsList } from '../../store/features/products/products.slice'
 
 
-const Index = ( { products , page, totalPage, total, data}) => {
+const Index = ( { product , page, totalPage, total, data}) => {
+  const {
+    
+    products,
+   
+} = useSelector(selectProductsList);
+const dispatch = useDispatch();
+
   // console.log("page",page)
   return (
     <>
@@ -58,7 +68,7 @@ const Index = ( { products , page, totalPage, total, data}) => {
 
     </Container>
 
-    <ListProducts products={products} page={page} total={total} totalPage={totalPage} />
+    <ListProducts product={product} page={page} total={total} totalPage={totalPage} />
     <TopSale/>
     <SliderColection data={data}/>
     <Sell/>
@@ -87,7 +97,7 @@ export const getServerSideProps = async (ctx) => {
       total: data.length,
       data,
 
-      products: data.slice( (page -1) * 12, page * 12),
+      product: data.slice( (page -1) * 12, page * 12),
       
     },
     
