@@ -30,12 +30,16 @@ import { styled, alpha } from "@mui/material/styles";
 import InputBase from "@mui/material/InputBase";
 import SearchIcon from "@mui/icons-material/Search";
 import List from "./ListProducts";
+import { Form } from "react-bootstrap";
 // import Pagination from '@mui/material/Pagination';
 import Pagination from "react-bootstrap/Pagination";
 import { useRouter } from "next/router";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { selectProductsList } from "../../../store/features/products/products.slice";
+import FormGroup from "@mui/material";
+import Checkbox from "@mui/material";
+import FormControlLabel from "@mui/material/FormControlLabel";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -79,15 +83,9 @@ const SearchIconWrapper = styled("div")(({ theme }) => ({
   justifyContent: "center",
 }));
 
-const ListProducts = ({ product, total, totalPage, page }) => {
-  const {
-    
-    products,
-   
-} = useSelector(selectProductsList);
-const dispatch = useDispatch();
-  // const dispatch = useDispatch();
-  // const { data: products } = useSelector(selectsProducts);
+const ListProducts = ({ product, total, totalPage, page, filter }) => {
+  const { products } = useSelector(selectProductsList);
+  const dispatch = useDispatch();
 
   const [open, setOpen] = useState(false);
   const [value, setValue] = React.useState(37);
@@ -114,11 +112,11 @@ const dispatch = useDispatch();
     "Open for offers",
   ];
 
-  const { register, handleSubmit } = useForm({
-    defaultValues: {
-      category: "Category",
-    },
-  });
+  // const { register, handleSubmit } = useForm({
+  //   defaultValues: {
+  //     category: "Category",
+  //   },
+  // });
 
   const [category, setCategory] = useState("");
   const [Collections, setCollections] = useState("");
@@ -177,8 +175,12 @@ const dispatch = useDispatch();
   }
   const router = useRouter();
 
+  const { register, handleSubmit } = useForm();
+  const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
+
   return (
     <>
+    
       <Container fluid className={styles.background}>
         <div className="container">
           <Row>
@@ -206,21 +208,25 @@ const dispatch = useDispatch();
                   id="example-collapse-text "
                   className={styles.layout_filter}
                 >
-                  <Col xs={12} md={6} lg={3} className="mb-3">
+                  {/* <Col xs={12} md={6} lg={3} className="mb-3">
                     <div className="inner">
                       <Typography color="white" variant="h6" mb={1}>
                         Category
                       </Typography>
-                      <Box>
+                      <Box component="form">
                         <TextField
                           value={lang}
-                          onChange={(e) => setLang(e.target.ariaValueNow)}
+                          onChange={(e) => console.log(e.target.value)}
                           select
                           SelectProps={{ native: true }}
                           sx={{ width: "100%", backgroundColor: "#fff" }}
                         >
                           {Categori.map((lang) => (
-                            <option value={lang} key={lang}>
+                            <option
+                              value={lang}
+                              key={lang}
+                              {...register("lang")}
+                            >
                               {" "}
                               {lang}
                             </option>
@@ -291,10 +297,17 @@ const dispatch = useDispatch();
                         />
                       </Search>
                     </Box>
+                  </Col> */}
+                  <Col xs={12} md={6} lg={3} className="mb-3">
+                   
                   </Col>
                 </Row>
               </Collapse>
             </Col>
+
+            {/* <Col xs={8}>
+              
+            </Col> */}
 
             {product.map((item) => (
               <Col xs={12} sm={6} lg={3} key={item.id}>
@@ -338,13 +351,14 @@ const dispatch = useDispatch();
                 </Link>
               </Col>
             ))}
-
             <Col className="justify-content-center d-flex" xs={12}>
               <Pagination>{items}</Pagination>
             </Col>
           </Row>
         </div>
       </Container>
+
+
     </>
   );
 };

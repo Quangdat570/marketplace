@@ -90,7 +90,7 @@ export const selectCart = (state) => {
 
   return {
     items,
-
+    products,
     incQty,
     decQty,
     removeItem,

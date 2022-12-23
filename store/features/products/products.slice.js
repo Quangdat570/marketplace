@@ -4,7 +4,7 @@ const initialState = {
     data: [],
     currentPage: 0,
     filter: [],
-    displayStyle: "grid",
+   
     loading: true,
 };
 
@@ -13,7 +13,7 @@ const PAGE_SIZE = 9;
 export const loadProduct = createAsyncThunk(
     "products",
     async (args, thunkApi) => {
-        const response = await fetch("https://fakestoreapi.com/products");
+        const response = await fetch("http://localhost:3002/products");
         const data = await response.json();
 
         return data;
@@ -23,7 +23,7 @@ export const loadProduct = createAsyncThunk(
 export const loadProductById = createAsyncThunk(
     "products/byId",
     async (id, thunkApi) => {
-        const response = await fetch("https://fakestoreapi.com/products/" + id);
+        const response = await fetch("http://localhost:3002/products/" + id);
         const data = await response.json();
 
         return data;
@@ -37,12 +37,7 @@ const productsSlice = createSlice({
         pageChanged: (state, action) => {
             return { ...state, currentPage: action.payload };
         },
-        displayChanged: (state, action) => {
-            return {
-                ...state,
-                displayStyle: action.payload,
-            };
-        },
+        
         filterChanged: (state, action) => {
             return {
                 ...state,
@@ -70,6 +65,7 @@ export const { pageChanged, displayChanged, filterChanged } =
 export const selectAllProducts = (state) => state.products.data;
 export const selectProductById = (productId) => (state) =>
     state.products.data.find((product) => product.id == productId);
+    
 export const selectProductStatus = (state) =>
     state.products.loading || state.categories.loading;
 export const selectProductsList = (state) => {
